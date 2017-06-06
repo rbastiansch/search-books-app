@@ -1,0 +1,27 @@
+{
+  "name": "search-books-app",
+  "version": "0.1.0",
+  "homeṕage": "http://rbastiansch.github.io/search-books-app",
+  "private": true,
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-router": "^3.0.5",
+    "react-router-redux": "^4.0.8",
+    "redux": "^3.6.0"
+  },
+  "devDependencies": {
+    "axios": "^0.16.1",
+    "bootstrap": "^4.0.0-alpha.6",
+    "gh-pages": "^1.0.0",
+    "react-scripts": "1.0.7"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  }
+}
