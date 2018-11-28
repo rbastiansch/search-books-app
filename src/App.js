@@ -14,11 +14,13 @@ class App extends Component {
       booksPerPage: 10,
       startBooks: 0,
       total: 0,
+      searchStr: '',
     };
 
     this.handleListView = this.handleListView.bind(this);
     this.handlePagView = this.handlePagView.bind(this);
     this.updateBooks = this.updateBooks.bind(this);
+    this.updateSearchString = this.updateSearchString.bind(this);
     this.goPage = this.goPage.bind(this);
     
   } 
@@ -48,6 +50,10 @@ class App extends Component {
     this.handlePagView(true);
   }
 
+  updateSearchString(string){
+    this.setState({ searchStr: string})
+  }
+
   // é chamada pelo componente Pagination e recebe a pagina destino
   // chama a função para atualizar os livros
   goPage(page){
@@ -61,12 +67,12 @@ class App extends Component {
 
   render() {
 
-    const list = this.state.showList ? <List books={this.state.books} handlePagView={this.handlePagView} /> : null;
+    const list = this.state.showList ? <List books={this.state.books} searchStr={this.state.searchStr} handlePagView={this.handlePagView} /> : null;
     const pagination = this.state.showPagination ? <Pagination booksInfo={this.state} goPage={this.goPage}/> : null;
 
     return (
       <div className="container-fluid">
-        <Search updateBooks={this.updateBooks} booksInfo={this.state} ref="search"/>
+        <Search updateBooks={this.updateBooks} booksInfo={this.state} updateSearchString={this.updateSearchString} ref="search"/>
         {list}
         {pagination}
       </div>
