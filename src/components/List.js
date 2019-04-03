@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Item from './Item';
+import '../styles/card.scss';
 
 class List extends Component{
 	constructor(props){
@@ -61,8 +62,8 @@ class List extends Component{
 	}
 
 	render(){
-		const {books} = this.props;
-		const list = (!this.state.viewItem && books !== '' ? books.items.map((book, key) => {
+		const { books } = this.props;
+		const list = (!this.state.viewItem && books && books.totalItems ? books.items.map((book, key) => {
 
 			// esse código serve pra não dar erro quando o livro não tiver thumbnail
 			let thumbnail = '';
@@ -99,7 +100,7 @@ class List extends Component{
 		return(
 			<div>
 				<div className="row mt-2">
-					<div className="col d-flex flex-wrap justify-content-center">
+					<div className="col d-flex flex-wrap justify-content-around">
 					{list}
 					{item}
 					</div>				
