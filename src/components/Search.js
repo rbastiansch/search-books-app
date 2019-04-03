@@ -38,6 +38,7 @@ class Search extends Component{
 			this.setState({ books: response.data});
 			this.props.updateBooks(response.data);
 		});
+		this.props.updateSearchString(this.state.search);
 	}
 
 	render(){

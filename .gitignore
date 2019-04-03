@@ -10,6 +10,9 @@
 /build
 /dist
 
+#backup
+backup
+
 # misc
 .DS_Store
 .env.local

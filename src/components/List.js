@@ -13,6 +13,7 @@ class List extends Component{
 			total: 0,
 			page: 0,
 			itensPerPage: 10,
+			search: '',
 		}
 
 		this.handleFavorite = this.handleFavorite.bind(this);
@@ -55,6 +56,7 @@ class List extends Component{
 		this.setState({ 
 			viewItem: !this.state.viewItem,
 			book: book,
+			search: this.props.search,
 		})
 		this.props.handlePagView(this.state.viewItem);
 	}
@@ -69,13 +71,13 @@ class List extends Component{
 				thumbnail = book.volumeInfo.imageLinks.thumbnail;
 			}
 
-			const favoriteIcon = this.updateFavorite(book);			
-
+			const favoriteIcon = this.updateFavorite(book);
+			
 			return (
 				<div className="card" style={{width: 15 + 'rem'}} key={key}>
 					<img className="card-img-top img-fluid" src={`${thumbnail}`} alt="book thumbnail"/>
 					<div className="card-block">
-						<h4 className="card-title">{book.volumeInfo.title}</h4>
+						<h4 className="card-title" id="title-book">{book.volumeInfo.title}</h4>
 						<p className="card-text">{book.volumeInfo.subtitle}</p>
 					</div>
 				  	<div className="card-footer">
@@ -86,7 +88,9 @@ class List extends Component{
 				    </div>
 				</div>
 			);
+
 		}) : null);
+
 
 		const item = this.state.viewItem ? 
 			<Item handleView={this.handleView} updateFavorite={this.updateFavorite}
