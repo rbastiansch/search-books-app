@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../styles/item.scss';
 
 class Item extends Component{
 	render(){
@@ -15,7 +16,9 @@ class Item extends Component{
 				<h4>{book.volumeInfo.title}</h4>
 				<p>{book.volumeInfo.description}</p>
 				<div className="col d-flex justify-content-end">
-					<a onClick={() => this.props.handleFavorite(book)}><i className={`${favoriteIcon}`}></i></a>						
+					<button className="item-button-favourite" onClick={() => this.props.handleFavorite(book)}>
+						<i className={`${favoriteIcon}`}></i>
+					</button>
 				</div>
 			</div>			
 		);

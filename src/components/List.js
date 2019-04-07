@@ -38,13 +38,13 @@ class List extends Component{
 
 	// atualiza o icone nos livros
 	updateFavorite(book){
-		let favoriteIcon = 'fa fa-star-o ml-5';
+		let favoriteIcon = 'fa fa-star-o';
 		const verifyFavorites = localStorage.getItem('favorites');
 		if(verifyFavorites !== null){
 			if(verifyFavorites.indexOf(book.id) !== -1){
-				return favoriteIcon = 'fa fa-star ml-5';
+				return favoriteIcon = 'fa fa-star';
 			}else{
-				return favoriteIcon = 'fa fa-star-o ml-5';
+				return favoriteIcon = 'fa fa-star-o';
 			}
 		}else{
 			return favoriteIcon;
@@ -81,10 +81,10 @@ class List extends Component{
 						<p className="card-text">{book.volumeInfo.subtitle}</p>
 					</div>
 				  	<div className="card-footer">
-				     	<a className="btn btn-primary" onClick={() => this.handleView(book)}>Details</a>
-				     	<a onClick={() => this.handleFavorite(book)}>
+				     	<button className="card-button-details btn btn-primary" onClick={() => this.handleView(book)}>Details</button>
+				     	<button className="card-button-favorite" onClick={() => this.handleFavorite(book)}>
 				     		<i className={`${favoriteIcon}`} aria-hidden="true"></i>
-				     	</a>
+				     	</button>
 				    </div>
 				</div>
 			);

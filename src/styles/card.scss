@@ -1,3 +1,21 @@
+@import './_colors';
+
 .card {
   margin: 20px 10px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-button-details {
+  color: $white;
+  cursor: pointer;
+}
+
+.card-button-favorite {
+  background: none;
+  border: none;
+  color: $blue;
 }
