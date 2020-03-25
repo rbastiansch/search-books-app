@@ -110,8 +110,4 @@ class List extends Component{
 	}
 }
 
-List.proptypes = {
-	handlePagView: PropTypes.func,
-}
-
 export default List;
