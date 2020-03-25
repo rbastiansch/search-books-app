@@ -1,7 +1,7 @@
 {
   "name": "search-books-app",
   "version": "0.1.0",
-  "homepage": "http://rbastiansch.github.io/search-books-app",
+  "homepage": "./",
   "private": true,
   "dependencies": {
     "react": "^16.6.3",
